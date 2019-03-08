@@ -27,7 +27,6 @@ class App extends Component {
   selectBg = bg => this.setState({ bgColor: bg });
 
   render() {
-    console.log(this.state.iselement);
     return (
       <>
         <div className="bg" style={{ background: this.state.bgColor }} />

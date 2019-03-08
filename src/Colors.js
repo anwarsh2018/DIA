@@ -8,7 +8,7 @@ class Colors extends Component {
       <div className="col-sm-1">
         <div className="row">
           <button
-            className="btn btn-primary"
+            className="button"
             value={this.props.element.color}
             onClick={() => {
               this.props.selectElement(this.props.element.color);
