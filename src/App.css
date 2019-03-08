@@ -1,32 +1,91 @@
-.App {
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+  height: 450px;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+  border: 4px solid #4d3319;
+}
+.bg {
+  position: absolute;
+  width: 780px;
+  height: 600px;
+  left: 240px;
+  top: 0px;
+}
+/* Set black background color, white text and some padding */
+footer {
+  background-color: #996633;
+  padding: 5px;
+  height: 200px;
+  border: 4px solid #4d3319;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {
+    height: auto;
+  }
+}
+
+video {
+  margin-top: 0px;
+  border: 1px solid black;
+}
+
+.button {
+  cursor: pointer;
+  display: block;
+  width: 50px;
+  border: 1px solid black;
+  font: 14px "Open Sans", "Arial", sans-serif;
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding-top: 2px;
+  padding-bottom: 4px;
   color: white;
+  background-color: lightBlue;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+  margin-bottom: 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.left {
+  margin-right: 10px;
+  float: left;
+  width: 160px;
+  padding: 0px;
+}
+
+.right {
+  margin-left: 10px;
+  float: left;
+  width: 160px;
+  padding: 0px;
+}
+
+.bottom {
+  clear: both;
+  padding-top: 10px;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  background: #000;
 }
