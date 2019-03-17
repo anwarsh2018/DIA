@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
 import posed from "react-pose";
-import elementsadded from "./store";
-import { observer } from "mobx-react";
+// import elementsadded from "./store";
+// import { observer } from "mobx-react";
 
 const Box = posed.div({
   draggable: true,
@@ -24,7 +22,7 @@ class Elements extends Component {
 
   componentDidUpdate(prevState) {
     if (prevState.x !== this.state.x) {
-      let item = { x: this.state.x, y: this.state.y };
+      // let item = { x: this.state.x, y: this.state.y };
       console.log(this.state.objs);
     }
   }
@@ -47,10 +45,10 @@ class Elements extends Component {
   };
   render() {
     const element = this.props.element;
-    const videoURL = element.meta.link;
+    // const videoURL = element.meta.link;
     const elementText = element.meta.text;
     let boxes = this.state.objs.map(box => box.objs);
-    console.log("obj", elementsadded.objs);
+    // console.log("obj", elementsadded.objs);
     return (
       <div className="col-sm-1">
         <div className="row">
@@ -66,16 +64,8 @@ class Elements extends Component {
           </button>
         </div>
         {boxes}
-        {/*  <Box
-          className="box"
-          onValueChange={{
-            y: y => {
-              if (y < -300) console.log(elementText);
-            }
-          }}
-        />*/}
       </div>
     );
   }
 }
-export default observer(Elements);
+export default Elements;
