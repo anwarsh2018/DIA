@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
 
 class Sidenav extends Component {
   render() {
@@ -13,7 +11,7 @@ class Sidenav extends Component {
         <div className="col-sm-8 text-center">
           <div className="col-sm-4 sidenav">
             <div className="well">
-              <iframe width="120" height="120" src={videoURL} />
+              <iframe width="120" height="120" src={videoURL} title="vid" />
             </div>
 
             <div className="well">

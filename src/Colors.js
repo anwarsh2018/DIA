@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
 
 class Colors extends Component {
   render() {

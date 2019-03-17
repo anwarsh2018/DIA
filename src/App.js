@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
-import Sidenav from "./sidenav";
-import ElementsCollection from "./elementsCollection";
+import Sidenav from "./Sidenav";
+import ElementsCollection from "./ElementsCollection";
 import groups from "./data";
 import Background from "./Background.js";
 
@@ -13,14 +10,14 @@ class App extends Component {
     currentElement: groups["أشخاص"][0],
     selected: "أشخاص",
     bgColor: "lightBlue",
-    iselement: true
+    isElement: true
   };
 
   selectGroup = event => {
     const group = groups[event.target.value];
     this.setState({ currentGroup: group, selected: event.target.value });
-    if (event.target.value === "خلفيات") this.setState({ iselement: false });
-    else this.setState({ iselement: true });
+    if (event.target.value === "خلفيات") this.setState({ isElement: false });
+    else this.setState({ isElement: true });
   };
 
   selectElement = element => this.setState({ currentElement: element });
@@ -43,7 +40,7 @@ class App extends Component {
               </button>
             </div>
 
-            {this.state.iselement ? (
+            {this.state.isElement ? (
               <ElementsCollection
                 group={this.state.currentGroup}
                 selectElement={this.selectElement}
@@ -66,17 +63,6 @@ class App extends Component {
             <div className="col-sm-2">
               <input type="button" value={this.state.selected} />
             </div>
-
-            {/*<div className="col-sm-2">
-              <div className="row">
-                <input type="button" value="خلفيات" />
-              </div>
-              <br />
-
-              <div className="row">
-                <input type="button" value="ألوان" />
-              </div>
-            </div>*/}
 
             <div className="col-sm-1">
               <div className="row">
@@ -104,15 +90,6 @@ class App extends Component {
                   type="button"
                   onClick={this.selectGroup}
                   value="أشخاص"
-                  isTrue={true}
-                />
-              </div>
-              <br />
-              <div className="row">
-                <input
-                  type="button"
-                  onClick={this.selectGroup}
-                  value="حيوانات"
                   isTrue={true}
                 />
               </div>
