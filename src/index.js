@@ -4,9 +4,9 @@ import * as serviceWorker from "./serviceWorker";
 import App from "./App";
 
 //Design
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import "./App.css";
 // import $ from "jquery";
 // import Popper from "popper.js";
 

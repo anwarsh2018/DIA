@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Sidenav from "./Sidenav";
-import ElementsCollection from "./ElementsCollection";
+import SideNav from "./Components/SideNav";
+import ElementsCollection from "./Components/ElementsCollection";
 import groups from "./data";
-import Background from "./Background.js";
+import Background from "./Components/Background.js";
 
 class App extends Component {
   state = {
@@ -27,7 +27,7 @@ class App extends Component {
     return (
       <>
         <div className="bg" style={{ background: this.state.bgColor }} />
-        <Sidenav element={this.state.currentElement} />
+        <SideNav element={this.state.currentElement} />
 
         <footer className="container-fluid text-center">
           <section className="row">

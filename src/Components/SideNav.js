@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Sidenav extends Component {
+class SideNav extends Component {
   render() {
     const element = this.props.element;
     console.log(element);
@@ -56,4 +56,4 @@ class Sidenav extends Component {
     );
   }
 }
-export default Sidenav;
+export default SideNav;
