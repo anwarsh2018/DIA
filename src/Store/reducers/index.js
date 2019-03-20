@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
 
 // Reducers
-import errorReducer from "./errors";
+import errorsReducer from "./errors";
+import groupsReducer from "./groups";
 
 export default combineReducers({
-  errors: errorReducer
+  errors: errorsReducer,
+  groups: groupsReducer
 });

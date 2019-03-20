@@ -83,86 +83,44 @@ const people = [
     }
   },
   {
-    element: "women",
-    meta: {
-      text: "إمرأة",
-      link: "http://www.menasy.com/01008.gif"
-    }
-  },
-  {
-    element: "man",
-    meta: {
-      text: "رجل",
-      link: "http://www.menasy.com/01013.gif"
-    }
-  },
-  {
-    element: "women",
+    element: "woman",
     meta: {
       text: "إمرأة",
       link: "http://www.menasy.com/01008.gif"
     }
   }
 ];
+
 const colors = [
   {
-    color: "blue",
-    meta: {
-      text: "رجل",
-      link: "http://www.menasy.com/01013.gif"
-    }
+    color: "blue"
   },
   {
-    color: "red",
-    meta: {
-      text: "رجل",
-      link: "http://www.menasy.com/01013.gif"
-    }
+    color: "red"
   },
   {
-    color: "while",
-    meta: {
-      text: "رجل",
-      link: "http://www.menasy.com/01013.gif"
-    }
+    color: "while"
   },
   {
-    color: "orange",
-    meta: {
-      text: "رجل",
-      link: "http://www.menasy.com/01013.gif"
-    }
+    color: "orange"
   },
   {
-    color: "yellow",
-    meta: {
-      text: "رجل",
-      link: "http://www.menasy.com/01013.gif"
-    }
+    color: "yellow"
   },
   {
-    color: "brown",
-    meta: {
-      text: "رجل",
-      link: "http://www.menasy.com/01013.gif"
-    }
+    color: "brown"
   },
   {
-    color: "black",
-    meta: {
-      text: "رجل",
-      link: "http://www.menasy.com/01013.gif"
-    }
+    color: "black"
   },
   {
-    color: "green",
-    meta: {
-      text: "رجل",
-      link: "http://www.menasy.com/01013.gif"
-    }
+    color: "green"
   },
-  { color: "lightBlue" }
+  {
+    color: "lightBlue"
+  }
 ];
+
 export default {
   أشخاص: people,
   حيوانات: animals,

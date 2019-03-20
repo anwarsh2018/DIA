@@ -1,27 +1,34 @@
 import React, { Component } from "react";
+// import { Switch, Route, Redirect, withRouter } from "react-router-dom";
+import groups from "./data";
+
+//Components
 import SideNav from "./Components/SideNav";
 import ElementsCollection from "./Components/ElementsCollection";
-import groups from "./data";
 import Background from "./Components/Background.js";
+
+//Redux
+import { connect } from "react-redux";
+import * as actionCreators from "./Store/actions";
 
 class App extends Component {
   state = {
     currentGroup: groups["أشخاص"],
     currentElement: groups["أشخاص"][0],
-    selected: "أشخاص",
+    selectedGroup: "أشخاص",
     bgColor: "lightBlue",
     isElement: true
   };
 
   selectGroup = event => {
     const group = groups[event.target.value];
-    this.setState({ currentGroup: group, selected: event.target.value });
+    this.setState({ currentGroup: group, selectedGroup: event.target.value });
     if (event.target.value === "خلفيات") this.setState({ isElement: false });
-    else this.setState({ isElement: true });
+    else this.setState({ isElement: true }); //Still not sure what this is for
   };
 
   selectElement = element => this.setState({ currentElement: element });
-  selectBg = bg => this.setState({ bgColor: bg });
+  selectBackground = bg => this.setState({ bgColor: bg });
 
   render() {
     return (
@@ -48,7 +55,7 @@ class App extends Component {
             ) : (
               <Background
                 group={this.state.currentGroup}
-                selectBg={this.selectBg}
+                selectBackground={this.selectBackground}
               />
             )}
 
@@ -61,7 +68,7 @@ class App extends Component {
               </button>
             </div>
             <div className="col-sm-2">
-              <input type="button" value={this.state.selected} />
+              <input type="button" value={this.state.selectedGroup} />
             </div>
 
             <div className="col-sm-1">
@@ -70,7 +77,7 @@ class App extends Component {
                   type="button"
                   onClick={this.selectGroup}
                   value="خلفيات"
-                  isTrue={false}
+                  //isTrue={false}
                 />
               </div>
               <br />
@@ -79,7 +86,7 @@ class App extends Component {
                   type="button"
                   onClick={this.selectGroup}
                   value="حيوانات"
-                  isTrue={true}
+                  //isTrue={true}
                 />
               </div>
             </div>
@@ -90,7 +97,7 @@ class App extends Component {
                   type="button"
                   onClick={this.selectGroup}
                   value="أشخاص"
-                  isTrue={true}
+                  //isTrue={true}
                 />
               </div>
             </div>
@@ -101,4 +108,24 @@ class App extends Component {
   }
 }
 
-export default App;
+// const mapStateToProps = state => {
+//   return {
+//     position: state.auth.position,
+//     currentGroup: state.groups.currentGroup,
+//     currentElement: state.groups.currentElement,
+//     selectedGroup: state.groups.selectedGroup,
+//     bgColor: state.groups.bgColor
+//   };
+// };
+
+const mapDispatchToProps = dispatch => ({
+  selectGroup: groupName => dispatch(actionCreators.selectGroup(groupName)),
+  selectElement: element => dispatch(actionCreators.selectElement(element)),
+  selectBackground: background =>
+    dispatch(actionCreators.selectBackground(background))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);
