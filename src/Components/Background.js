@@ -4,14 +4,8 @@ import Colors from "./Colors.js";
 class Background extends Component {
   render() {
     const elementsButtons = this.props.group.map(element => (
-      <div className="col-sm-2">
-        {
-          <Colors
-            key={element.color}
-            element={element}
-            selectElement={this.props.selectBg}
-          />
-        }
+      <div className="col-sm-2" key={element.color}>
+        <Colors element={element} selectElement={this.props.selectBackground} />
       </div>
     ));
 

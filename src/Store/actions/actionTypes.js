@@ -1,1 +1,6 @@
 export const SET_ERRORS = "SET_ERRORS";
+
+//GROUPS
+export const SELECT_GROUP = "SELECT_GROUP";
+export const SELECT_ELEMENT = "SELECT_ELEMENT";
+export const SELECT_BACKGROUND = "SELECT_BACKGROUND";

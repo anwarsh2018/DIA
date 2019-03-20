@@ -5,8 +5,9 @@ import App from "./App";
 
 //Design
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 // import $ from "jquery";
 // import Popper from "popper.js";
 

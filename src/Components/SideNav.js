@@ -3,7 +3,6 @@ import React, { Component } from "react";
 class SideNav extends Component {
   render() {
     const element = this.props.element;
-    console.log(element);
     const videoURL = element.meta.link;
     const elementText = element.meta.text;
     return (
@@ -20,7 +19,7 @@ class SideNav extends Component {
 
             <div className="well">
               <div className="row">
-                <video autoplay width="200" height="200" />
+                <video autoPlay width="200" height="200" />
               </div>
               <br />
 
@@ -29,7 +28,7 @@ class SideNav extends Component {
                   <input
                     type="button"
                     value="Start"
-                    onclick="stop()"
+                    onClick={console.log("stop")}
                     style={{
                       height: 30,
                       maxWidth: 50
@@ -41,7 +40,7 @@ class SideNav extends Component {
                     id="clickMe"
                     type="button"
                     value="Stop"
-                    onclick="stop()"
+                    onClick={console.log("stop")}
                     style={{
                       height: 30,
                       maxWidth: 50

@@ -21,7 +21,7 @@ class Elements extends Component {
   componentDidUpdate(prevState) {
     if (prevState.x !== this.state.x) {
       // let item = { x: this.state.x, y: this.state.y };
-      console.log(this.state.objs);
+      // console.log(this.state.objs);
     }
   }
 
