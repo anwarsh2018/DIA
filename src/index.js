@@ -5,11 +5,8 @@ import App from "./App";
 
 //Design
 import "./App.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-// import $ from "jquery";
-// import Popper from "popper.js";
 
 //Redux
 import store from "./Store";
