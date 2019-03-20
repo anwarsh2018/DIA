@@ -11,9 +11,9 @@ class ElementsCollection extends Component {
     if (!this.props.currentGroup) {
       return <Loading />;
     } else {
-      const elementsButtons = this.props.currentGroup.map(element => (
+      const elementsButtons = this.props.currentGroup.map((element, idx) => (
         <Elements
-          key={element.element}
+          key={element.element + idx}
           element={element}
           selectElement={this.props.selectElement}
         />
