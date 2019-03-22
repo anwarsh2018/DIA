@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 // import { Switch, Route, Redirect, withRouter } from "react-router-dom";
-import groups from "./data";
 
 //Components
 import SideNav from "./Components/SideNav";
@@ -13,28 +12,20 @@ import * as actionCreators from "./Store/actions";
 
 class App extends Component {
   state = {
-    currentGroup: groups["أشخاص"],
-    currentElement: groups["أشخاص"][0],
-    selectedGroup: "أشخاص",
-    bgColor: "lightBlue",
     isElement: true
   };
 
   selectGroup = event => {
-    const group = groups[event.target.value];
-    this.setState({ currentGroup: group, selectedGroup: event.target.value });
+    this.props.selectGroup(event.target.value);
     if (event.target.value === "خلفيات") this.setState({ isElement: false });
     else this.setState({ isElement: true }); //Still not sure what this is for
   };
 
-  selectElement = element => this.setState({ currentElement: element });
-  selectBackground = bg => this.setState({ bgColor: bg });
-
   render() {
     return (
       <>
-        <div className="bg" style={{ background: this.state.bgColor }} />
-        <SideNav element={this.state.currentElement} />
+        <div className="bg" style={{ background: this.props.bgColor }} />
+        <SideNav />
 
         <footer className="container-fluid text-center">
           <section className="row">
@@ -47,17 +38,7 @@ class App extends Component {
               </button>
             </div>
 
-            {this.state.isElement ? (
-              <ElementsCollection
-                group={this.state.currentGroup}
-                selectElement={this.selectElement}
-              />
-            ) : (
-              <Background
-                group={this.state.currentGroup}
-                selectBackground={this.selectBackground}
-              />
-            )}
+            {this.state.isElement ? <ElementsCollection /> : <Background />}
 
             <div className="col-sm-1">
               <button type="button" className="btn btn-default btn-arrow-right">
@@ -68,7 +49,7 @@ class App extends Component {
               </button>
             </div>
             <div className="col-sm-2">
-              <input type="button" value={this.state.selectedGroup} />
+              <input type="button" value={this.props.selectedGroup} />
             </div>
 
             <div className="col-sm-1">
@@ -77,7 +58,6 @@ class App extends Component {
                   type="button"
                   onClick={this.selectGroup}
                   value="خلفيات"
-                  //isTrue={false}
                 />
               </div>
               <br />
@@ -86,19 +66,13 @@ class App extends Component {
                   type="button"
                   onClick={this.selectGroup}
                   value="حيوانات"
-                  //isTrue={true}
                 />
               </div>
             </div>
 
             <div className="col-sm-1">
               <div className="row">
-                <input
-                  type="button"
-                  onClick={this.selectGroup}
-                  value="أشخاص"
-                  //isTrue={true}
-                />
+                <input type="button" onClick={this.selectGroup} value="أشخاص" />
               </div>
             </div>
           </section>
@@ -108,24 +82,19 @@ class App extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     position: state.auth.position,
-//     currentGroup: state.groups.currentGroup,
-//     currentElement: state.groups.currentElement,
-//     selectedGroup: state.groups.selectedGroup,
-//     bgColor: state.groups.bgColor
-//   };
-// };
+const mapStateToProps = state => {
+  return {
+    currentGroup: state.groups.currentGroup,
+    selectedGroup: state.groups.selectedGroup,
+    bgColor: state.groups.backgroundColor
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
-  selectGroup: groupName => dispatch(actionCreators.selectGroup(groupName)),
-  selectElement: element => dispatch(actionCreators.selectElement(element)),
-  selectBackground: background =>
-    dispatch(actionCreators.selectBackground(background))
+  selectGroup: groupName => dispatch(actionCreators.selectGroup(groupName))
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(App);

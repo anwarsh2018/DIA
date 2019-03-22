@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 
+//Redux
+import { connect } from "react-redux";
+// import * as actionCreators from "../Store/actions";
+
 class SideNav extends Component {
   render() {
-    const element = this.props.element;
+    const element = this.props.currentElement;
     const videoURL = element.meta.link;
     const elementText = element.meta.text;
     return (
@@ -28,7 +32,7 @@ class SideNav extends Component {
                   <input
                     type="button"
                     value="Start"
-                    onClick={console.log("stop")}
+                    onClick={() => console.log("stop")}
                     style={{
                       height: 30,
                       maxWidth: 50
@@ -40,7 +44,7 @@ class SideNav extends Component {
                     id="clickMe"
                     type="button"
                     value="Stop"
-                    onClick={console.log("stop")}
+                    onClick={() => console.log("stop")}
                     style={{
                       height: 30,
                       maxWidth: 50
@@ -55,4 +59,14 @@ class SideNav extends Component {
     );
   }
 }
-export default SideNav;
+
+const mapStateToProps = state => {
+  return {
+    currentElement: state.groups.currentElement
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(SideNav);

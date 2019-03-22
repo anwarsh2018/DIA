@@ -45,7 +45,7 @@ class Elements extends Component {
     const element = this.props.element;
     // const videoURL = element.meta.link;
     const elementText = element.meta.text;
-    let boxes = this.state.objs.map(box => box.objs);
+    // let boxes = this.state.objs.map(box => box.objs);
     // console.log("obj", elementsadded.objs);
     return (
       <div className="col-sm-1">
@@ -61,7 +61,7 @@ class Elements extends Component {
             {elementText}
           </button>
         </div>
-        {boxes}
+        {/* {boxes} */}
       </div>
     );
   }
