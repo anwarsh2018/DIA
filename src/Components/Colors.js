@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+//Redux
+import { connect } from "react-redux";
+import * as actionCreators from "../Store/actions";
+
 class Colors extends Component {
   render() {
     return (
@@ -9,7 +13,7 @@ class Colors extends Component {
             className="button"
             value={this.props.element.color}
             onClick={() => {
-              this.props.selectElement(this.props.element.color);
+              this.props.selectBackground(this.props.element.color);
             }}
           >
             {this.props.element.color}
@@ -19,4 +23,13 @@ class Colors extends Component {
     );
   }
 }
-export default Colors;
+
+const mapDispatchToProps = dispatch => ({
+  selectBackground: background =>
+    dispatch(actionCreators.selectBackground(background))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Colors);
