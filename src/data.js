@@ -99,7 +99,7 @@ const colors = [
     color: "red"
   },
   {
-    color: "while"
+    color: "white"
   },
   {
     color: "orange"
