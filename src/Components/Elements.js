@@ -28,6 +28,7 @@ class Elements extends Component {
   addObj = elementText => {
     let objs = (
       <Box
+        key={elementText}
         style={{ position: "fixed", bottom: " 450px", left: "550px" }}
         className="box"
         onValueChange={{
