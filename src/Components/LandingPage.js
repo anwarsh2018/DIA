@@ -23,59 +23,53 @@ class LandingPage extends Component {
   render() {
     return (
       <div>
-        <div className="bg" style={{ background: this.props.bgColor }} />
-        <SideNav />
+        <div className="row">
+          <div className="col-9" style={{ background: this.props.bgColor }}>
+            <p>iuhiuh</p>
+          </div>
+          <div className="col-3">
+            <SideNav />
+          </div>
+        </div>
 
-        <footer className="container-fluid text-center">
-          <section className="row">
-            <div className="col-sm-1">
-              <button type="button" className="btn btn-default btn-arrow-left">
-                <span
-                  className="glyphicon glyphicon-arrow-left"
-                  aria-hidden="true"
-                />
-              </button>
+        <div className="bg-dark row">
+          <div className="col-6">
+            <div className="row">
+              {this.state.isElement ? <ElementsCollection /> : <Background />}
             </div>
+          </div>
 
-            {this.state.isElement ? <ElementsCollection /> : <Background />}
+          <div className="col-3 p-3">
+            <input
+              type="button"
+              value={this.props.selectedGroup}
+              className="btn btn-info m-auto"
+            />
+          </div>
 
-            <div className="col-sm-1">
-              <button type="button" className="btn btn-default btn-arrow-right">
-                <span
-                  className="glyphicon glyphicon-arrow-right"
-                  aria-hidden="true"
-                />
-              </button>
+          <div className="col-3 p-3">
+            <div className="row mb-3">
+              <input
+                type="button"
+                className="btn btn-info mx-auto col-5"
+                onClick={this.selectGroup}
+                value="خلفيات"
+              />
+              <input
+                type="button"
+                className="btn btn-info mx-auto col-5"
+                onClick={this.selectGroup}
+                value="حيوانات"
+              />
             </div>
-            <div className="col-sm-2">
-              <input type="button" value={this.props.selectedGroup} />
-            </div>
-
-            <div className="col-sm-1">
-              <div className="row">
-                <input
-                  type="button"
-                  onClick={this.selectGroup}
-                  value="خلفيات"
-                />
-              </div>
-              <br />
-              <div className="row">
-                <input
-                  type="button"
-                  onClick={this.selectGroup}
-                  value="حيوانات"
-                />
-              </div>
-            </div>
-
-            <div className="col-sm-1">
-              <div className="row">
-                <input type="button" onClick={this.selectGroup} value="أشخاص" />
-              </div>
-            </div>
-          </section>
-        </footer>
+            <input
+              type="button"
+              className="btn btn-info mx-auto col-5"
+              onClick={this.selectGroup}
+              value="أشخاص"
+            />
+          </div>
+        </div>
       </div>
     );
   }

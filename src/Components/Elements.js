@@ -49,21 +49,16 @@ class Elements extends Component {
     // let boxes = this.state.objs.map(box => box.objs);
     // console.log("obj", elementsadded.objs);
     return (
-      <div className="col-sm-1">
-        <div className="row">
-          <button
-            className="button"
-            value={elementText}
-            onClick={() => {
-              this.props.selectElement(element);
-              this.addObj(elementText);
-            }}
-          >
-            {elementText}
-          </button>
-        </div>
-        {/* {boxes} */}
-      </div>
+      <button
+        className="btn btn-outline-light col-3 m-2"
+        value={elementText}
+        onClick={() => {
+          this.props.selectElement(element);
+          this.addObj(elementText);
+        }}
+      >
+        {elementText}
+      </button>
     );
   }
 }

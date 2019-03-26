@@ -7,19 +7,15 @@ import * as actionCreators from "../Store/actions";
 class Colors extends Component {
   render() {
     return (
-      <div className="col-sm-1">
-        <div className="row">
-          <button
-            className="button"
-            value={this.props.element.color}
-            onClick={() => {
-              this.props.selectBackground(this.props.element.color);
-            }}
-          >
-            {this.props.element.color}
-          </button>
-        </div>
-      </div>
+      <button
+        className="btn btn-outline-light m-2 col-3"
+        value={this.props.element.color}
+        onClick={() => {
+          this.props.selectBackground(this.props.element.color);
+        }}
+      >
+        {this.props.element.color}
+      </button>
     );
   }
 }

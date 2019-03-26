@@ -7,9 +7,7 @@ import { connect } from "react-redux";
 class Background extends Component {
   render() {
     const elementsButtons = this.props.currentGroup.map(element => (
-      <div className="col-sm-2" key={element.color}>
-        <Colors element={element} />
-      </div>
+      <Colors element={element} key={element.color} />
     ));
 
     return <div className="row">{elementsButtons}</div>;
