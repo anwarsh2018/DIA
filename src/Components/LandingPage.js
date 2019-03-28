@@ -25,7 +25,7 @@ class LandingPage extends Component {
       <div>
         <div className="row">
           <div className="col-9" style={{ background: this.props.bgColor }}>
-            <p>iuhiuh</p>
+            <p />
           </div>
           <div className="col-3">
             <SideNav />
@@ -43,11 +43,11 @@ class LandingPage extends Component {
             <input
               type="button"
               value={this.props.selectedGroup}
-              className="btn btn-info m-auto"
+              className="btn btn-success m-auto p-3"
             />
           </div>
 
-          <div className="col-3 p-3">
+          <div className="col-3 p-3 ">
             <div className="row mb-3">
               <input
                 type="button"

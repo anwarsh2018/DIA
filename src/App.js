@@ -11,7 +11,7 @@ import LandingPage from "./Components/LandingPage";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="" style={{ height: 100 }}>
         <Switch>
           <Route path="/home" component={LandingPage} />
 

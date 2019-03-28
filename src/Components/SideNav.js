@@ -11,15 +11,19 @@ class SideNav extends Component {
     const elementText = element.meta.text;
     return (
       <div>
-        <iframe
-          width="150"
-          height="150"
-          className="mt-3 mx-auto"
-          src={videoURL}
-          title="vid"
-        />
+        <center>
+          <iframe
+            width="150"
+            height="150"
+            className="m-3 mx-auto"
+            src={videoURL}
+            title="vid"
+          />
+        </center>
         <h3 className="text-center">{elementText}</h3>
-        <video autoPlay width="150" height="150" className="mx-auto" />
+        <center>
+          <video autoPlay width="150" height="150" className="mx-auto m-3" />
+        </center>
         <div className="row">
           <input
             type="button"

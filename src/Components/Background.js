@@ -10,7 +10,7 @@ class Background extends Component {
       <Colors element={element} key={element.color} />
     ));
 
-    return <div className="row">{elementsButtons}</div>;
+    return <div className="row p-1 m-2 mx-auto">{elementsButtons}</div>;
   }
 }
 
